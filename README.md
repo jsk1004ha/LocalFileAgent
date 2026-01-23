@@ -12,9 +12,7 @@ Everything happens locally. No data leaves your computer.
 -   **Confidential Local RAG**: Index and search your documents without uploading them to the cloud.
 -   **Smart File Management**: Ask the agent to find ("찾아줘") or open ("열어줘") files instantly.
 -   **Code Understanding**: Efficiently search and retrieve code snippets from your local projects.
--   **Dual Interface**:
-    -   **TUI (Terminal User Interface)** for a fast, hacker-style experience.
-    -   **Web UI** for a modern, accessible chat interface.
+-   **TUI (Terminal User Interface)** for a fast, hacker-style experience.
 -   **Powered by Ollama**: Uses state-of-the-art open-source models (Llama 3, Phi-3, etc.).
 
 ## 📋 Prerequisites
@@ -69,13 +67,6 @@ python run_tui.py
 -   **`열어줘 [file]`**: Open a specific file.
 -   **`/bye`** or **`/exit`**: Quit the application.
 
-### Web Interface
-Launch the web-based chat interface:
-```bash
-python run_web.py
-```
-Then open your browser and navigate to `http://localhost:8000` (or the port displayed in the terminal).
-
 ## 📂 Project Structure
 
 ```
@@ -89,7 +80,6 @@ LocalFileAgent/
 ├── verify_*.py          # Verification and test scripts
 ├── requirements.txt     # Python dependencies
 ├── run_tui.py           # Entry point for TUI
-└── run_web.py           # Entry point for Web UI
 ```
 
 ## 🤝 Contributing

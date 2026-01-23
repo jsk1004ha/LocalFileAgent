@@ -10,7 +10,7 @@ sentence-transformers>=2.2.0
 # UI Options
 rich>=13.0.0
 textual>=0.40.0
-gradio>=4.0.0
+
 
 # File Operations
 fuzzywuzzy>=0.18.0
