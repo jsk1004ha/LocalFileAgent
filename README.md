@@ -11,6 +11,15 @@ Everything happens locally. No data leaves your computer.
 
 모든 작업은 로컬에서 수행되며, 데이터는 컴퓨터 외부로 유출되지 않습니다.
 
+## 🎯 Purpose (목적)
+
+**The basic purpose of this program is an AI-powered file finder.**
+**이 프로그램의 기본적인 목적은 AI를 활용한 파일 찾기 기능입니다.**
+
+> "I store various files on my computer. Especially, there are many very important files or files needed for reports or work. However, as the number of these files increases, finding the desired file has become very difficult. I thought of AI as a solution to this problem. I thought that in the case of AI, even without an exact file name, it would be possible to find the exact file just by the subject or content it contains. Also, in order to use this AI anywhere, I decided to make it using a local AI method instead of an API method that requires a network environment."
+
+> "나는 컴퓨터에 다양한 파일을 담고 다닌다. 특히 이러한 파일 중에서는 굉장히 중요한 파일이나, 여러 가지 보고서 또는 작업에 필요한 파일들이 많다. 하지만 이러한 파일들의 수가 증가하면 증가할수록 원하는 파일을 찾는 것은 매우 힘들게 되었다. 나는 이러한 문제의 해결방법을 AI로 생각하였다. AI의 경우 정확한 파일명이 없어도 어떤 주제인지 어떤 내용을 담고 있는지 만으로도 정확한 파일을 찾아낼 수 있을 것이라고 생각했다. 또한 이러한 AI를 어디서든 사용하기 위해, 네트워크 환경이 필요한 api식 대신 로컬 AI를 활용한 방식으로 만들기로 하였다."
+
 ## 🚀 Key Features (주요 기능)
 
 -   **Confidential Local RAG**: Index and search your documents without uploading them to the cloud.
