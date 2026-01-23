@@ -21,8 +21,8 @@ Everything happens locally. No data leaves your computer.
     -   **코드 이해**: 로컬 프로젝트에서 코드 조각을 효율적으로 검색하고 추출합니다.
 -   **TUI (Terminal User Interface)**: Fast, hacker-style experience.
     -   **TUI (터미널 사용자 인터페이스)**: 빠르고 직관적인 해커 스타일의 인터페이스를 제공합니다.
--   **Powered by Ollama**: Uses state-of-the-art open-source models (Llama 3, Phi-3, etc.).
-    -   **Ollama 기반**: 최신 오픈 소스 모델(Llama 3, Phi-3 등)을 사용합니다.
+-   **Powered by Ollama**: Uses state-of-the-art open-source models (Llama 3, etc.).
+    -   **Ollama 기반**: 최신 오픈 소스 모델(Llama 3 등)을 사용합니다.
 
 ## 📋 Prerequisites (필수 요구 사항)
 
@@ -36,7 +36,7 @@ Before you begin, ensure you have the following installed:
 
 1.  **Clone the repository (저장소 복제):**
     ```bash
-    git clone https://github.com/yourusername/LocalFileAgent.git
+    git clone https://github.com/jsk1004ha/LocalFileAgent.git
     cd LocalFileAgent
     ```
 
@@ -57,13 +57,11 @@ Before you begin, ensure you have the following installed:
     ```
 
 4.  **Pull the essential models (필수 모델 다운로드):**
-    Make sure Ollama is running, then pull the model you intend to use (default is configured for `llama3.1` or `phi3`).
+    Make sure Ollama is running, then pull the model you intend to use (default is configured for `llama3.1`).
     
-    Ollama가 실행 중인지 확인한 후, 사용할 모델을 다운로드하세요 (기본 설정은 `llama3.1` 또는 `phi3`입니다).
+    Ollama가 실행 중인지 확인한 후, 사용할 모델을 다운로드하세요 (기본 설정은 `llama3.1`입니다).
     ```bash
     ollama pull llama3.1
-    # or
-    ollama pull phi3
     ```
 
 ## 💻 Usage (사용법)
@@ -78,7 +76,7 @@ python run_tui.py
 -   Type your query naturally. (자연어로 질문하세요.)
 -   **`찾아줘 [files]`**: Search for files. (파일을 검색합니다.)
 -   **`열어줘 [file]`**: Open a specific file. (특정 파일을 엽니다.)
--   **`/bye`** or **`/exit`**: Quit the application. (프로그램을 종료합니다.)
+-   **`/quit`**: Quit the application. (프로그램을 종료합니다.)
 
 ## 📂 Project Structure (프로젝트 구조)
 
