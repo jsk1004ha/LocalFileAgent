@@ -20,7 +20,7 @@ Everything happens locally. No data leaves your computer.
 -   **Code Understanding**: Efficiently search and retrieve code snippets from your local projects.
     -   **코드 이해**: 로컬 프로젝트에서 코드 조각을 효율적으로 검색하고 추출합니다.
 -   **TUI (Terminal User Interface)**: Fast, hacker-style experience.
-    -   **TUI (터미널 사용자 인터페이스)**: 빠르고 직관적인 해커 스타일의 인터페이스를 제공합니다.
+    -   **TUI (터미널 사용자 인터페이스)**: 빠르고 직관적인 TUI 인터페이스를 제공합니다.
 -   **Powered by Ollama**: Uses state-of-the-art open-source models (Llama 3, etc.).
     -   **Ollama 기반**: 최신 오픈 소스 모델(Llama 3 등)을 사용합니다.
 
