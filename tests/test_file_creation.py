@@ -73,8 +73,15 @@ class FileCreationTests(unittest.TestCase):
         self.assertEqual(target.read_text(encoding="utf-8"), "data")
 
     def test_resolves_relative_workspace(self):
-        operator = FileOperator(os.path.relpath(self.workspace, Path.cwd()))
-        result = operator.create_file("nested/report.txt", "data")
+        previous_directory = Path.cwd()
+        try:
+            # Windows runners keep checkout and temporary files on different
+            # drives, so make the relative path from its actual parent.
+            os.chdir(self.root)
+            operator = FileOperator("workspace")
+            result = operator.create_file("nested/report.txt", "data")
+        finally:
+            os.chdir(previous_directory)
         self.assertTrue(result["success"], result)
         self.assertEqual((self.workspace / "nested/report.txt").read_text(encoding="utf-8"), "data")
 
