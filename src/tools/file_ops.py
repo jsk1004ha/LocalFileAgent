@@ -244,17 +244,32 @@ class FileOperator:
                 return {"success": False, "content": None, "message": "파일을 읽을 수 없습니다 (인코딩 오류)"}
     
     def create_file(self, filename: str, content: str) -> dict:
-        """Create a new file with content."""
-        file_path = self.base_path / filename
-        
-        # Create parent directories if needed
-        file_path.parent.mkdir(parents=True, exist_ok=True)
-        
+        """Create a new file inside the workspace without replacing existing data."""
         try:
-            with open(file_path, 'w', encoding='utf-8') as f:
+            if not isinstance(filename, str) or not filename.strip():
+                raise ValueError("파일명이 비어 있습니다.")
+            if not isinstance(content, str):
+                raise ValueError("파일 내용은 문자열이어야 합니다.")
+
+            workspace = self.base_path.resolve()
+            candidate = self.base_path / filename
+            # Even a dangling link is an existing entry, not a new file.
+            if candidate.is_symlink():
+                raise FileExistsError("이미 존재하는 파일이나 링크입니다.")
+            file_path = candidate.resolve()
+            if file_path == workspace or not file_path.is_relative_to(workspace):
+                raise ValueError("작업 폴더 안의 파일 경로를 지정해주세요.")
+
+            # Validate before creating directories, including symlinked parents.
+            file_path.parent.mkdir(parents=True, exist_ok=True)
+            # Exclusive creation also protects against another writer creating
+            # the same destination after validation.
+            with open(file_path, 'x', encoding='utf-8') as f:
                 f.write(content)
             self._refresh_cache()
             return {"success": True, "path": str(file_path), "message": f"파일 생성됨: {file_path.name}"}
+        except FileExistsError:
+            return {"success": False, "message": "파일 생성 실패: 같은 경로에 파일이나 링크가 이미 존재합니다. 다른 이름을 지정해주세요."}
         except Exception as e:
             return {"success": False, "message": f"파일 생성 실패: {str(e)}"}
     
